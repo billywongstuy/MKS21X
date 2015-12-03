@@ -1,0 +1,12 @@
+git init creates a new Git repository
+git show HEAD filename shows your most recent commit
+git diff filename shows the diff between your current file and the most recent commit
+git log shows a list of commits
+git checkout lets you view a specific commit
+git checkout HEAD filename discards changes in the staging area
+git reset HEAD filename unstages a file 
+git reset (commit SHA) resets the repository to that commit 
+git status shows the contents of the working area and stage
+git add adds files to the stage
+git commit -m commits the changes to the repository with a message
+
