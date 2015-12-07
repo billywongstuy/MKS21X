@@ -1,0 +1,25 @@
+Starting a Git Repository:
+1. Create a new folder
+2. cd into the folder then type in "git init" to initialize git
+3. Create a new repository on GitHub
+4. Add origin to Git repository using "git remote add origin [link of GitHub repository]
+5. Create new files and edit as necessary
+6. Use "git add" to add certain files or all files to the stage
+7. Use "git commit -m "message" to create a new commit
+8. Push your changes to GitHub using "git commit"
+9. Repeat steps 5-8 when editing
+
+Alternatively:
+Use "git clone [GitHub repo link]" to clone an exisiting GitHub repo
+
+
+Working Between Computers:
+1. Immediately pull when beginning to work
+2. Make periodic commits and pushes when working
+
+
+Reverting to An Old Version:
+1. Use "git log" to determine which commit you want to revert back to
+2. Use "git checkout SHA" to checkout the commit
+3. Make desired changes
+4. Add and commit; this will be a new commit on the top of the git log
