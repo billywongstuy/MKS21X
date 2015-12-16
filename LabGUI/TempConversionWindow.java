@@ -5,21 +5,12 @@ import java.awt.event.*;
 public class TempConversionWindow extends JFrame implements ActionListener{
     private Container pane;
     
-    /*private JButton b;
-      private JLabel l;
-      private JTextField t;
-      private JCheckBox c;*/
-
-
     private JTextField tField;
-
     private JLabel cLabel;
     private JButton cButton;
-
     private JLabel fLabel;
     private JButton fButton;
-
-    private JTextField test;
+    private JTextField display;
     
 
     public TempConversionWindow() {
@@ -30,50 +21,44 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 
 
 	pane = this.getContentPane(); //where to attach stuff
-	pane.setLayout(new BoxLayout(pane,BoxLayout.Y_AXIS));
+	//pane.setLayout(new BoxLayout(pane,BoxLayout.Y_AXIS));
+	pane.setLayout(new GridBagLayout());
+	GridBagConstraints c = new GridBagConstraints();
 
+	c.fill = GridBagConstraints.HORIZONTAL;
+	c.gridx = 0;
+	c.gridy = 0;
+
+	//cLabel = new JLabel("Convert C to F",null,JLabel.CENTER);
+	//fLabel = new JLabel("Convert F to C",null,JLabel.CENTER);
 	
-	/*t = new JTextField(12);
-
-	  b = new JButton("Do Nothing");
-	  l = new JLabel("This is AWESOME! (lies)",null,JLabel.CENTER);
-	
-	  c = new JCheckBox("Overclock!!!");
-
-	  pane.add(l);
-	  pane.add(b);
-	  pane.add(t);
-	  pane.add(c);*/
-
-	cLabel = new JLabel("Convert C to F",null,JLabel.CENTER);
 	tField = new JTextField(4);
+	
 	cButton = new JButton("C to F");
-
-	//pane.add(cLabel,TEXTPANEL);
-	
-	pane.add(tField);
-
-	pane.add(cButton);
-	
 	cButton.setActionCommand("CtoF");
-	cButton.addActionListener(this);
-
-        //pane.add(new JSeparator(SwingConstants.VERTICAL));
+	cButton.addActionListener(this);	
 	
-	fLabel = new JLabel("Convert F to C",null,JLabel.CENTER);
 	fButton = new JButton("F to C");
-
-	//pane.add(fLabel);
-	pane.add(fButton);
-	
 	fButton.setActionCommand("FtoC");
 	fButton.addActionListener(this);	
 
-	test = new JTextField(4);
-	test.setEditable(false);
-	pane.add(test);
+	display = new JTextField("Converted temperature appears here.");
+	display.setEditable(false);
 
-	//test.setText("9");
+	c.gridwidth = 3;
+	pane.add(tField,c);
+
+	c.gridwidth = 1;
+	c.gridy += 2;
+	pane.add(cButton,c);
+	
+	c.gridx += 2;
+	pane.add(fButton,c);
+
+        c.fill = GridBagConstraints.VERTICAL;
+	c.gridx -= 1;
+	c.gridy += 2;
+	pane.add(display,c);
 	
     }
 
@@ -92,12 +77,12 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	if (action.equals("CtoF")) {
 	    double t = Integer.parseInt(tField.getText());
 	    System.out.println(CtoF(t));
-	    test.setText(""+CtoF(t));
+	    display.setText(""+CtoF(t));
 	}
 	else if (action.equals("FtoC")) {
 	    double t = Integer.parseInt(tField.getText());
 	    System.out.println(FtoC(t));
-	    test.setText(""+FtoC(t));
+	    display.setText(""+FtoC(t));
 	}
 	}
 	catch (NumberFormatException d) {
