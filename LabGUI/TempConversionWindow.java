@@ -49,8 +49,10 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	tField = new JTextField(4);
 	cButton = new JButton("C to F");
 
-	pane.add(cLabel);
+	//pane.add(cLabel,TEXTPANEL);
+	
 	pane.add(tField);
+
 	pane.add(cButton);
 	
 	cButton.setActionCommand("CtoF");
@@ -61,7 +63,7 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	fLabel = new JLabel("Convert F to C",null,JLabel.CENTER);
 	fButton = new JButton("F to C");
 
-	pane.add(fLabel);
+	//pane.add(fLabel);
 	pane.add(fButton);
 	
 	fButton.setActionCommand("FtoC");
@@ -86,6 +88,7 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
 	String action = e.getActionCommand();
+	try {
 	if (action.equals("CtoF")) {
 	    double t = Integer.parseInt(tField.getText());
 	    System.out.println(CtoF(t));
@@ -94,7 +97,11 @@ public class TempConversionWindow extends JFrame implements ActionListener{
 	else if (action.equals("FtoC")) {
 	    double t = Integer.parseInt(tField.getText());
 	    System.out.println(FtoC(t));
-	    test.setText(""+CtoF(t));
+	    test.setText(""+FtoC(t));
+	}
+	}
+	catch (NumberFormatException d) {
+	    JOptionPane.showMessageDialog(null,"Please enter the number in a correct format.");
 	}
     }
 
