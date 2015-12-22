@@ -1,4 +1,10 @@
 Starting a Git Repository:
+
+1. Start a GitHub repository on GitHub with README
+2. Use git clone [repository link] on your computer
+
+
+Not the correct way:
 1. Create a new folder
 2. cd into the folder then type in "git init" to initialize git
 3. Create a new repository on GitHub
@@ -9,8 +15,7 @@ Starting a Git Repository:
 8. Push your changes to GitHub using "git commit"
 9. Repeat steps 5-8 when editing
 
-Alternatively:
-Use "git clone [GitHub repo link]" to clone an exisiting GitHub repo
+
 
 
 Working Between Computers:
