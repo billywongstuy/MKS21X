@@ -18,7 +18,6 @@ public class BarCode implements Comparable{
 	    if (zip.length() == 5) {
 		_zip = zip;
 		_checkDigit = checkSum();
-		_zip += _checkDigit;
 	    }
 	    else {
 		throw new IllegalArgumentException("Please make sure your input has a length of exactly 5!");
@@ -52,6 +51,7 @@ public class BarCode implements Comparable{
 	for (int i = 0; i < _zip.length(); i++) {
 	    barz += bars[Integer.parseInt(_zip.substring(i,i+1))] + "";
 	}
+	barz += bars[_checkDigit];
 	return barz + "|";
     }
 
@@ -62,6 +62,9 @@ public class BarCode implements Comparable{
 
     //compare tostring
     public int compareTo(Object other){
+	if (other instanceof BarCode) {
+	    (_zip+_checkDigit).compareTo(((BarCode)other)._zip+((BarCode)other)._checkDigit);
+	}
 	return toString().compareTo(other.toString());
     }
 
