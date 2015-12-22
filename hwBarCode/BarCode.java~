@@ -75,7 +75,6 @@ public class BarCode implements Comparable{
 	System.out.println(a.equals(b));
 	
 	BarCode c = new BarCode("97480");
-	System.out.println(c);
 	System.out.println(a.equals(c));
 
 	BarCode d = new BarCode("08451");
@@ -84,9 +83,6 @@ public class BarCode implements Comparable{
 	//BarCode e = new BarCode("93894795");
 
 	//BarCode f = new BarCode("abcde");
-
-	BarCode g = new BarCode("11111");
-	System.out.println(g);
 	
     }
 }
