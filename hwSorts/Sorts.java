@@ -2,19 +2,12 @@ public class Sorts {
 
     public static void insertionSort(int[]data) {
 	for (int i = 1; i < data.length; i++) {
-	    int push = 0;
+	    int k;
 	    int value = data[i];
-	    for (int j = i-1; j >= 0; j--) {
-		if (value < data[j]) {
-		    push += 1;
-		}
+	    for (k = i - 1; k >= 0 && data[k] > value; k--) {
+		data[k+1] = data[k];		
 	    }
-	    int position = i;
-	    for (int k = push; k > 0; k--) {
-		data[position] = data[position-1];
-		position -= 1;
-	    }
-	    data[i-push] = value;
+	    data[k+1] = value;
 	}
     }
 
