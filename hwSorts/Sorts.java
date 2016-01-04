@@ -22,7 +22,7 @@ public class Sorts {
     public static void selectionSort(int[]data) {
 	int start = 0;
 	int lowestIndex = 0;
-	while (start < data.length) {
+	while (start < data.length-1) {
 	    int lowest = data[start];
 	    for (int i = start; i < data.length; i++) {
 		if (data[i] < lowest) {
@@ -32,6 +32,7 @@ public class Sorts {
 	    }
 	    data[lowestIndex] = data[start];
 	    data[start] = lowest;
+	    //printArray(data);
 	    start++;
 	}
     }
@@ -70,7 +71,7 @@ public class Sorts {
         insertionSort(twoa);
 	int [] twoat = {10,8,9,-1,43,4};
         insertionSort(twoat);*/
-	int [] stwoa = {10,8,9,-1,43,4,6};
+	int [] stwoa = {10,8,9,0,-1,43,4,6};
         //insertionSort(stwoa);
 	selectionSort(stwoa);
 	printArray(stwoa);
