@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Sorts {
 
     public static void insertionSort(int[]data) {
@@ -10,7 +12,6 @@ public class Sorts {
 	    data[k+1] = value;
 	}
     }
-
 
     public static void selectionSort(int[]data) {
 	int start = 0;
@@ -25,8 +26,22 @@ public class Sorts {
 	    }
 	    data[lowestIndex] = data[start];
 	    data[start] = lowest;
-	    //printArray(data);
 	    start++;
+	}
+    }
+
+    public static void bubbleSort(int[]data) {
+	int end = data.length;
+	while (end > 0) {
+	    for (int i = 0; i < end-1; i++) {
+		int toSwap;
+		if (data[i+1] < data[i]) {
+		    toSwap = data[i];
+		    data[i] = data[i+1];
+		    data[i+1] = toSwap;
+		}
+	    }
+	    end--;
 	}
     }
 
@@ -46,7 +61,14 @@ public class Sorts {
     
 
     public static void fillRandom(int[]data) {
-	
+	Random generator = new Random();
+	for (int i = 0; i < data.length; i++) { 
+	    int sign = 1;
+	    if ((int)(Math.random()*2) == 0) {
+		sign = -1;
+	    }
+	    data[i] = sign * generator.nextInt(100);
+	}
     }
 
     public static void main(String[]a) {
@@ -66,8 +88,21 @@ public class Sorts {
         insertionSort(twoat);*/
 	int [] stwoa = {10,8,9,0,-1,43,4,6};
         //insertionSort(stwoa);
-	selectionSort(stwoa);
-	printArray(stwoa);
+	//selectionSort(stwoa);
+	//bubbleSort(stwoa);
+	//printArray(stwoa);
+
+	int[]testArray = new int[(int)(Math.random()*10+1)];
+	fillRandom(testArray);
+	int[]copy = Arrays.copyOf(testArray,testArray.length);
+	Arrays.sort(copy);
+	printArray(copy);
+	//insertionSort(testArray);
+	//selectionSort(testArray);
+	bubbleSort(testArray);
+	printArray(testArray);
+
+	//test cases using random seed arrays
     }
     
 }
