@@ -71,21 +71,28 @@ public class Sorts {
 	}
     }
 
+
+    public static void swap (int[] data, int x, int y) {
+	int store = data[x];
+	data[x] = data[y];
+	data[y] = store;
+    }
+
     public static void main(String[]a) {
 	/*int [] o = {10};
-	insertionSort(o);
-	int [] one = {10,8};
-	insertionSort(one);
-	int [] two = {10,8,9};
-	insertionSort(two);
-	int [] tw = {10,8,9,7};
-        insertionSort(tw);
-	int [] twoy = {10,8,9,-1};
-        insertionSort(twoy);
-	int [] twoa = {10,8,9,-1,43};
-        insertionSort(twoa);
-	int [] twoat = {10,8,9,-1,43,4};
-        insertionSort(twoat);*/
+	  insertionSort(o);
+	  int [] one = {10,8};
+	  insertionSort(one);
+	  int [] two = {10,8,9};
+	  insertionSort(two);
+	  int [] tw = {10,8,9,7};
+	  insertionSort(tw);
+	  int [] twoy = {10,8,9,-1};
+	  insertionSort(twoy);
+	  int [] twoa = {10,8,9,-1,43};
+	  insertionSort(twoa);
+	  int [] twoat = {10,8,9,-1,43,4};
+	  insertionSort(twoat);*/
 	int [] stwoa = {10,8,9,0,-1,43,4,6};
         //insertionSort(stwoa);
 	//selectionSort(stwoa);
