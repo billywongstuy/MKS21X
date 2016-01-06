@@ -1,4 +1,13 @@
+import java.util.*;
+
 public class Driver2{
+
+    public static void swap (int[] data, int x, int y) {
+	int store = data[x];
+	data[x] = data[y];
+	data[y] = store;
+    }
+    
     public static void main(String[]args){
         int size = 10000;
         String choice = "insertion";
@@ -29,7 +38,7 @@ public class Driver2{
         if(order.equals("reversed")){
             Arrays.sort(ary);
             for(int i = 0; i < ary.length / 2; i++){
-                Sorts.swap(ary,i,ary.length-i-1);
+                swap(ary,i,ary.length-i-1);
             }
         }
 
